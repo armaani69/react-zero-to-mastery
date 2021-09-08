@@ -1,21 +1,28 @@
+import { useState } from "react";
+import blogData from "../homepage/blog";
+import "./home.css";
+
 const Home = () => {
-  const handleClick = (name?: string) => {
-    console.log(`Hi there, ${name}!!`);
-  };
-  const eventTesterFunction = (e: any) => {
-    console.log(e.target);
-  };
+  const [blog, setBlog] = useState(blogData);
+  //   const [num, setNum] = useState(34);
+  //   const changeNumber = () => {
+  //     setNum(Math.floor(Date.now()));
+  //   };
   return (
     <div className="homepage">
-      <h1>Homepage data</h1>
-      <button
-        onClick={() => {
-          handleClick("Armaan");
-        }}
-      >
-        Test Click
-      </button>
-      <button onClick={eventTesterFunction}>Event Tester Button</button>
+      <div className="blog-preview">
+        {blog.map((data) => (
+          <div key={data.id}>
+            <h2 style={{ marginTop: "1em", color: "rgb(202, 24, 68)" }}>
+              {data.title}
+            </h2>
+            <p>{data.body}</p>
+            <p>The name of the author is {data.author} </p>
+          </div>
+        ))}
+      </div>
+      {/* <button onClick={changeNumber}>Click Me</button>
+      <p>{num}</p> */}
     </div>
   );
 };

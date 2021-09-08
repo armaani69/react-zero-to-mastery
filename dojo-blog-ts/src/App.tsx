@@ -1,5 +1,6 @@
 import NavBar from "./components/navbar/navbar";
 import Home from "./components/homepage/home";
+import "./styles/output.css";
 
 const App = () => {
   return (
