@@ -1,3 +1,13 @@
-.blog-preview p:hover {
-  text-shadow: 1px 1px gray;
+.blog-div {
+  padding: 1em;
+}
+.blog-div:hover {
+  box-shadow: 1px 2px 5px gray;
+}
+.blog-preview {
+  width: 30%;
+}
+.homepage {
+  margin-top: 2em;
+  width: 100%;
 }

@@ -1,9 +1,30 @@
 import { useState } from "react";
-import blogData from "../homepage/blog";
+import BlogList from "../bloglist/bloglist";
+// import blogData from "../homepage/blog";
 import "./home.css";
 
 const Home = () => {
-  const [blog, setBlog] = useState(blogData);
+  const [blogs, setBlog] = useState([
+    {
+      title: "My new website",
+      body: "This is the data regarding my new website. I am a pro",
+      author: "Armaan Mathew",
+      id: 1,
+    },
+    {
+      title: "My new t-shirt",
+      body: "This is the data regarding my new t-shirt. I am a pro",
+      author: "Akshay Sajeev",
+      id: 2,
+    },
+    {
+      title: "My new car",
+      body: "This is the data regarding my new car. I am a pro",
+      author: "Rehaan John",
+      id: 3,
+    },
+  ]);
+  let title = "List of all blogs";
   //   const [num, setNum] = useState(34);
   //   const changeNumber = () => {
   //     setNum(Math.floor(Date.now()));
@@ -11,15 +32,7 @@ const Home = () => {
   return (
     <div className="homepage">
       <div className="blog-preview">
-        {blog.map((data) => (
-          <div key={data.id}>
-            <h2 style={{ marginTop: "1em", color: "rgb(202, 24, 68)" }}>
-              {data.title}
-            </h2>
-            <p>{data.body}</p>
-            <p>The name of the author is {data.author} </p>
-          </div>
-        ))}
+        <BlogList blog={blogs} title={title} />
       </div>
       {/* <button onClick={changeNumber}>Click Me</button>
       <p>{num}</p> */}
